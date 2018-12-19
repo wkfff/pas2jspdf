@@ -87,7 +87,6 @@ __recovery/
 backup/
 *.bak
 lib/
-examples/js
 
 # Application bundle for Mac OS
 *.app/

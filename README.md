@@ -1,6 +1,6 @@
 # Pas2jsPDF
 
-Pascal mapping for [jsPDF](https://parall.ax/products/jspdf)
+Pascal mapping for [jsPDF](https://parall.ax/products/jspdf).
 
 # Live example
 
