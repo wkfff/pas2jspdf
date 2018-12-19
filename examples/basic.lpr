@@ -7,25 +7,12 @@ uses
   Web,
   jsPDF;
 
-type
-  THTMLSelect = class external name 'HTMLSelectElement' (TJSElement)
-    value: string;
-  end;
-
-  THTMLButton = class external name 'HTMLButtonElement' (TJSElement)
-    disabled: Boolean;
-  end;
-
-  THTMLEmbed = class external name 'HTMLEmbedElement' (TJSElement)
-    src: string;
-  end;
-
 var
   doc: TjsPDF;
   opt: string;
-  edSelExample: THTMLSelect;
-  btDownload: THTMLButton;
-  ebPreview: THTMLEmbed;
+  edSelExample: TJSHTMLSelectElement;
+  btDownload: TJSHTMLButtonElement;
+  ebPreview: TJSHTMLEmbedElement;
 
 procedure edSelExampleChange;
 begin
@@ -161,9 +148,9 @@ begin
 end;
 
 begin
-  edSelExample := THTMLSelect(document.getElementById('edSelExample'));
+  edSelExample := TJSHTMLSelectElement(document.getElementById('edSelExample'));
   edSelExample.addEventListener('change', @edSelExampleChange);
-  btDownload := THTMLButton(document.getElementById('btDownload'));
+  btDownload := TJSHTMLButtonElement(document.getElementById('btDownload'));
   btDownload.addEventListener('click', @btDownloadClick);
-  ebPreview := THTMLEmbed(document.getElementById('ebPreview'));
+  ebPreview := TJSHTMLEmbedElement(document.getElementById('ebPreview'));
 end.
